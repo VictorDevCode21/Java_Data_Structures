@@ -68,31 +68,56 @@ public class Main {
 
         /*Linked Lists*/
 
-        LinkedList l = new LinkedList();
-        l.add(10);
-        l.add(20);
-        l.add(30);
-        l.add(40);
-        l.add(50);
-        l.add(60);
-        l.add(120);
+//        LinkedList l = new LinkedList();
+//        l.add(10);
+//        l.add(20);
+//        l.add(30);
+//        l.add(40);
+//        l.add(50);
+//        l.add(60);
+//        l.add(120);
+//
+//        System.out.println("Hello");
+//        l.print();
+//
+//        System.out.println("Sum: " + l.sum());
+//        System.out.println("Get(0): " + l.getIndex(0));
+//        System.out.println("Get(2): " + l.getIndex(2));
+//        System.out.println("Get(3): " + l.getIndex(3));
+//        System.out.println("Get(4): " + l.getIndex(4));
+//        System.out.println("GetSize2: " + l.getSize2());
+//        System.out.println("GetIndex: " + l.getIndexByValue(50));
+//        System.out.println("GetMax: " + l.getMax());
+//        System.out.println("GetFrequency: " + l.getFrequency(10));
+//
+//
+//        l.swap(1,6);
+//        l.print();
 
-        System.out.println("Hello");
-        l.print();
+        /* Double LinkedLists */
+        DoubleNode p = new DoubleNode(10);
+        DoubleNode q = new DoubleNode(20);
+        DoubleNode r = new DoubleNode(30);
 
-        System.out.println("Sum: " + l.sum());
-        System.out.println("Get(0): " + l.getIndex(0));
-        System.out.println("Get(2): " + l.getIndex(2));
-        System.out.println("Get(3): " + l.getIndex(3));
-        System.out.println("Get(4): " + l.getIndex(4));
-        System.out.println("GetSize2: " + l.getSize2());
-        System.out.println("GetIndex: " + l.getIndexByValue(50));
-        System.out.println("GetMax: " + l.getMax());
-        System.out.println("GetFrequency: " + l.getFrequency(10));
+        p.setNext(q);
+        q.setNext(r);
 
+        q.setPrev(p);
+        r.setPrev(q);
+        r.setNext(new DoubleNode(40));
 
-        l.swap(1,6);
-        l.print();
+        r.getNext().setPrev(r);
+
+        System.out.println(p);
+        System.out.println(q);
+        System.out.println(r);
+        System.out.println(r.getNext());
+
+        DoubleLinkedList dl = new DoubleLinkedList();
+
+        dl.add(15, 25, 35, 45, 55, 65);
+
+        dl.print();
 
     }
 }
